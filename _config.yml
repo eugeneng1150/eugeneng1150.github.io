@@ -1,0 +1,27 @@
+title: Eugene
+description: "Notes on things I’m learning."
+url: "https://eugeneng1150.github.io"
+baseurl: ""
+github_url: "https://github.com/eugeneng1150"
+timezone: Asia/Singapore
+markdown: kramdown
+highlighter: rouge
+permalink: /:year/:month/:day/:title/
+kramdown:
+  input: GFM
+  math_engine: mathjax
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

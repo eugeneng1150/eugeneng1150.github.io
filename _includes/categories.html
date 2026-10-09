@@ -1,0 +1,10 @@
+<header class="page-header"><h1>Categories</h1><p class="intro">Browse posts by topic.</p></header>
+{% assign categories = site.categories | sort %}
+{% for category in categories %}
+<section class="category-section" aria-labelledby="{{ category[0] | slugify }}">
+  <h2 id="{{ category[0] | slugify }}">{{ category[0] | escape }} <span class="count">{{ category[1] | size }}</span></h2>
+  <ul class="category-posts">{% for post in category[1] %}
+    <li><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %-d, %Y' }}</time></li>
+  {% endfor %}</ul>
+</section>
+{% else %}<p>No categories yet.</p>{% endfor %}

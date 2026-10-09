@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<article>
+  <header class="article-header">
+    <div class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %-d, %Y' }}</time>
+      {% for category in page.categories %}<a href="{{ '/categories/' | relative_url }}#{{ category | slugify }}">{{ category | escape }}</a>{% endfor %}
+    </div>
+    <h1>{{ page.title | escape }}</h1>
+    {% if page.description %}<p class="article-description">{{ page.description | escape }}</p>{% endif %}
+  </header>
+  <div class="prose">{{ content }}</div>
+</article>
+<nav class="post-navigation" aria-label="Article navigation">
+  <a href="{{ '/' | relative_url }}">All categories</a>
+  {% if page.previous %}<a href="{{ page.previous.url | relative_url }}">Previous: {{ page.previous.title | escape }}</a>{% endif %}
+  {% if page.next %}<a href="{{ page.next.url | relative_url }}">Next: {{ page.next.title | escape }}</a>{% endif %}
+</nav>
