@@ -1,5 +1,5 @@
 ---
-title: "Blogs"
+title: "Placeholder"
 description: "Undone"
 categories: [Notes]
 ---
