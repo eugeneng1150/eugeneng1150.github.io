@@ -7,6 +7,10 @@ timezone: Asia/Singapore
 markdown: kramdown
 highlighter: rouge
 permalink: /:year/:month/:day/:title/
+collections:
+  papers:
+    output: true
+    permalink: /papers/:name/
 kramdown:
   input: GFM
   math_engine: mathjax
@@ -20,6 +24,11 @@ defaults:
       type: posts
     values:
       layout: post
+  - scope:
+      path: ""
+      type: papers
+    values:
+      layout: paper
 exclude:
   - README.md
   - Gemfile

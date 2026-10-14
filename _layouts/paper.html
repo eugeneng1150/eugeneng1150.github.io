@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<article>
+  <header class="article-header">
+    <h1>{{ page.title | escape }}</h1>
+    {% if page.description %}<p class="article-description">{{ page.description | escape }}</p>{% endif %}
+    {% if page.paper_url %}<p><a href="{{ page.paper_url | escape }}">Read the original paper</a></p>{% endif %}
+  </header>
+  <div class="prose">{{ content }}</div>
+</article>
+<nav class="post-navigation" aria-label="Paper navigation">
+  <a href="{{ '/papers/' | relative_url }}">All papers</a>
+</nav>
